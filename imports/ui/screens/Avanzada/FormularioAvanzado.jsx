@@ -15,7 +15,8 @@ import UploadFileIcon from '@mui/icons-material/UploadFile';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 import {
-  BASE_URL, DEFAULT_DATA_PLANTILLA, DEFAULT_FORM_VALUES, HEADERS,
+  BASE_URL, DEFAULT_DATA_PLANTILLA_ADULTOS,
+  DEFAULT_FORM_VALUES, HEADERS, DEFAULT_DATA_PLANTILLA_KIDS,
 } from './constants.js';
 
 import DownloadFile from '../../components/DownloadFile/DownloadFile.jsx';
@@ -82,7 +83,9 @@ const FormularioAvanzado = () => {
 
   const onExportPlantilla = async() => {
     const data = await json2csv({
-      data: DEFAULT_DATA_PLANTILLA,
+      data: formValues.isAbuelo
+        ? DEFAULT_DATA_PLANTILLA_ADULTOS
+        : DEFAULT_DATA_PLANTILLA_KIDS,
       nombreArchivo: 'plantilla_analisis.csv',
     });
 
@@ -92,6 +95,25 @@ const FormularioAvanzado = () => {
   return (
     <>
       <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <InputLabel>
+            Defina la población objetivo del análisis
+          </InputLabel>
+          <div className="mt-3 d-flex justify-content-start">
+            <div>Niños (15 - 19 años)</div>
+            <div className="ml-3">
+              <Switch
+                checked={formValues.isAbuelo}
+                onChange={handleSwitch}
+                name="isAbuelo"
+                color="primary"
+                className="switch-small mt-n2"
+              />
+            </div>
+            <div className="ml-3">Abuelos</div>
+          </div>
+        </Grid>
+
         <Grid item xs={12}>
           <FormLabel id="demo-radio-buttons-group-label">
             Por favor anexe el documento en csv con el formato* indicado
@@ -114,25 +136,6 @@ const FormularioAvanzado = () => {
             </Grid>
           )
           : null}
-
-        <Grid item xs={12}>
-          <InputLabel>
-            Defina la población objetivo del análisis
-          </InputLabel>
-          <div className="mt-3 d-flex justify-content-start">
-            <div>Niños (0 - 14 años)</div>
-            <div className="ml-3">
-              <Switch
-                checked={formValues.isAbuelo}
-                onChange={handleSwitch}
-                name="isAbuelo"
-                color="primary"
-                className="switch-small mt-n1"
-              />
-            </div>
-            <div className="ml-3">Abuelos</div>
-          </div>
-        </Grid>
 
         <Grid item xs={12}>
           <div className="d-flex justify-content-end mt-2">

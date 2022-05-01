@@ -1,17 +1,58 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-/*
-form questions:
-step_in_life free_time_satisfaction
-health_satisfaction happiness_yesterday life_worthiness life_satisfaction job_satisfaction
-safety_satisfaction worried_level sadness_level home_life_conditions
-childhouse_home home_incomes
-*/
+// material ui core
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import InputLabel from '@mui/material/InputLabel';
+import Switch from '@mui/material/Switch';
 
-const FormularioBasico = (props) => (
-  <div>FormularioBasico</div>
-);
+import FormularioAbuelos from './FormularioAbuelos.jsx';
+import FormularioKids from './FormularioKids.jsx';
+
+const FormularioBasico = () => {
+  const [isAbuelo, setIsAbuelo] = useState(false);
+
+  const FormContent = isAbuelo ? FormularioAbuelos : FormularioKids;
+
+  const handleSwitch = (event) => {
+    const { checked } = event.target;
+
+    setIsAbuelo(checked);
+  };
+
+  return (
+    <>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <InputLabel>
+            Seleccione su clasificación
+          </InputLabel>
+          <div className="mt-3 d-flex justify-content-start">
+            <div>Niño (15 - 19 años)</div>
+            <div className="ml-3">
+              <Switch
+                checked={isAbuelo}
+                onChange={handleSwitch}
+                name="isAbuelo"
+                color="primary"
+                className="switch-small mt-n2"
+              />
+            </div>
+            <div className="ml-3">Abuelo</div>
+          </div>
+        </Grid>
+
+        <Grid item xs={12}>
+          <Divider variant="fullWidth" />
+        </Grid>
+
+        <Grid item xs={12}>
+          <FormContent />
+        </Grid>
+      </Grid>
+    </>
+  );
+};
 
 FormularioBasico.propTypes = {};
 
