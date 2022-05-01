@@ -1,5 +1,1 @@
-
-
-Meteor.startup(() => {
-
-});
+import '../imports/api';
