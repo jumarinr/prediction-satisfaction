@@ -207,7 +207,7 @@ const FormularioAvanzado = () => {
                       onClick={onDownloadResults}
                       color="success"
                     >
-                      Descagar resultado en CSV
+                      Descargar resultado en CSV
                     </Button>
                   </div>
                 </div>
