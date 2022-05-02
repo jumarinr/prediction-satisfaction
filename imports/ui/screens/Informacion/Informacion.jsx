@@ -20,10 +20,6 @@ const Informacion = () => (
         <p>
           Para este trabajo la variable a predecir es el nivel de satisfacción
           con la vida y se enfocará en dos tipos de sujetos: niños y abuelos.
-          Ambas definiciones deberán especificarse en el trabajo.
-          Es posible que los analistas decidan que para tener un buen modelo
-          es necesario tener subgrupos y uno o varios modelos para cada grupo.
-          La creación de las variables explicativas es parte del trabajo.
         </p>
 
       </CardContent>
