@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -32,7 +34,9 @@ const NumberInput = ({
               shrink: true,
             }}
             size="small"
-            value={formValues[attributeName] || ''}
+            value={!_.isNil(formValues[attributeName])
+              ? formValues[attributeName]
+              : ''}
             onChange={handleChangeInput}
             className="ml-2"
           />

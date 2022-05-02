@@ -120,15 +120,22 @@ export const PREGUNTAS_ABUELOS_SELECT = [
   },
   {
     attributeName: 'home_life_conditions',
-    label: '¿Actualmente las condiciones de vida en su hogar son? 1 Muy buenas 2 Buenas 3 Regulares 4 Malas',
+    label: '¿Actualmente las condiciones de vida en su hogar son?',
+    options: OPTIONS_BUENAS_MALAS,
   },
   {
     attributeName: 'childhouse_home',
-    label: '¿Con relación del hogar donde usted se crió, este hogar vive económicamente? 1 Mejor 2 Igual 3 Peor',
+    label: '¿Con relación del hogar donde usted se crió, este hogar vive económicamente?',
+    options: OPTIONS_MEJOR_PEOR,
   },
   {
     attributeName: 'home_incomes',
-    label: '¿Los ingresos de su hogar? 1 No alcanza para cubrir los gatos mínimos 2 Sólo alcanza para cubrir los gastos mínimos 3 Cubre más que los gastos mínimos',
+    label: '¿Los ingresos de su hogar?',
+    options: [
+      { value: 1, description: 'No alcanza para cubrir los gatos mínimos' },
+      { value: 2, description: 'Sólo alcanza para cubrir los gastos mínimos' },
+      { value: 3, description: 'Cubre más que los gastos mínimos' },
+    ],
   },
   {
     attributeName: 'has_partner',
@@ -244,5 +251,16 @@ export const PREGUNTAS_KIDS_SELECT = [
     attributeName: 'live_after_5_years',
     label: '¿Usted piensa que el nivel de vida actúal de su hogar, respecto al que tenía 5 años atrás es?',
     options: OPTIONS_MEJOR_PEOR,
+  },
+];
+
+export const PREGUNTAS_KIDS_INPUT = [
+  {
+    attributeName: 'goods_quantity',
+    label: 'Ingrese la cantidad de bienes que hay en el hogar',
+  },
+  {
+    attributeName: 'parents_number',
+    label: 'Ingrese la cantidad de padres que hay en el hogar',
   },
 ];

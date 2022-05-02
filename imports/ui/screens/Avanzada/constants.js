@@ -1,60 +1,24 @@
-export const BASE_URL = 'https://satisfaccion-model.herokuapp.com/prediccion';
+import _ from 'lodash';
 
-export const HEADERS = {
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
-};
+import {
+  PREGUNTAS_ABUELOS_INPUT, PREGUNTAS_ABUELOS_SELECT, PREGUNTAS_KIDS_INPUT, PREGUNTAS_KIDS_SELECT,
+} from '../Basica/constants';
 
 export const DEFAULT_FORM_VALUES = {
   file: null,
   isAbuelo: false,
 };
 
-export const DEFAULT_DATA_PLANTILLA_ADULTOS = [
-  {
-    step_in_life: '',
-    free_time_satisfaction: '',
-    health_satisfaction: '',
-    happiness_yesterday: '',
-    life_worthiness: '',
-    job_satisfaction: '',
-    safety_satisfaction: '',
-    worried_level: '',
-    sadness_level: '',
-    home_life_conditions: '',
-    childhouse_home: '',
-    home_incomes: '',
-  },
-];
+const getQuestions = (acum, current) => ({ ...acum, [current]: '' });
 
-/**
-'step_in_life','free_time_satisfaction',
-'health_satisfaction','happiness_yesterday',
-'life_worthiness','life_satisfaction',
-'safety_satisfaction','worried_level','sadness_level',
-'home_life_conditions','childhouse_home','has_internet',
-'parents_number','goods_quantity','poverty',
-'live_after_5_years'
-*/
+// obtenemos la plantilla para niños
+const preguntasKids = _.concat(PREGUNTAS_KIDS_SELECT, PREGUNTAS_KIDS_INPUT);
+const preguntasKidsVariables = _.map(preguntasKids, 'attributeName').reduce(getQuestions, {});
 
-export const DEFAULT_DATA_PLANTILLA_KIDS = [
-  {
-    step_in_life: '',
-    free_time_satisfaction: '',
-    health_satisfaction: '',
-    happiness_yesterday: '',
-    life_worthiness: '',
-    life_satisfaction: '',
-    safety_satisfaction: '',
-    worried_level: '',
-    sadness_level: '',
-    home_life_conditions: '',
-    childhouse_home: '',
-    has_internet: '',
-    parents_number: '',
-    goods_quantity: '',
-    poverty: '',
-    live_after_5_years: '',
-  },
-];
+// obtenemos la plantilla para abuelos
+const preguntasAbuelos = _.concat(PREGUNTAS_ABUELOS_SELECT, PREGUNTAS_ABUELOS_INPUT);
+const preguntasAbuelosVariables = _.map(preguntasAbuelos, 'attributeName').reduce(getQuestions, {});
+
+export const DEFAULT_DATA_PLANTILLA_ADULTOS = [preguntasAbuelosVariables];
+
+export const DEFAULT_DATA_PLANTILLA_KIDS = [preguntasKidsVariables];

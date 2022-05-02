@@ -3,26 +3,28 @@ import axios from 'axios';
 
 // material ui core
 import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import InputLabel from '@mui/material/InputLabel';
-import Switch from '@mui/material/Switch';
 import LoadingButton from '@mui/lab/LoadingButton';
+import Switch from '@mui/material/Switch';
 
 // material ui icons
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 import {
-  BASE_URL, DEFAULT_DATA_PLANTILLA_ADULTOS,
-  DEFAULT_FORM_VALUES, HEADERS, DEFAULT_DATA_PLANTILLA_KIDS,
+  DEFAULT_DATA_PLANTILLA_ADULTOS,
+  DEFAULT_FORM_VALUES, DEFAULT_DATA_PLANTILLA_KIDS,
 } from './constants.js';
 
 import DownloadFile from '../../components/DownloadFile/DownloadFile.jsx';
 import json2csv from '../../utils/json2csv.js';
 import Resultados from './Resultados.jsx';
 import styles from './styles.jsx';
+import { BASE_URL, HEADERS } from '../../utils/constants.js';
 
 const FormularioAvanzado = () => {
   const classes = styles();
@@ -166,10 +168,14 @@ const FormularioAvanzado = () => {
           </div>
         </Grid>
 
+        <Grid item xs={12} className="mt-4">
+          <Divider variant="fullWidth" />
+        </Grid>
+
         {resultado
           ? (
             <>
-              <Grid item xs={12}>
+              <Grid item xs={12} className="mt-4">
                 <div>
                   <b>
                     Resultado:
