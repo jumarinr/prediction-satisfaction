@@ -19,12 +19,12 @@ import {
   DEFAULT_DATA_PLANTILLA_ADULTOS,
   DEFAULT_FORM_VALUES, DEFAULT_DATA_PLANTILLA_KIDS,
 } from './constants.js';
+import { BASE_URL, HEADERS } from '../../utils/constants.js';
 
 import DownloadFile from '../../components/DownloadFile/DownloadFile.jsx';
 import json2csv from '../../utils/json2csv.js';
 import Resultados from './Resultados.jsx';
 import styles from './styles.jsx';
-import { BASE_URL, HEADERS } from '../../utils/constants.js';
 
 const FormularioAvanzado = () => {
   const classes = styles();

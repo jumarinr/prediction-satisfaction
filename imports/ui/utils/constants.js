@@ -14,6 +14,8 @@ export const CSV_MIME_TYPE = 'text/csv';
 
 export const BASE_URL = 'https://satisfaccion-model.herokuapp.com/prediccion';
 
+export const BASE_URL_TRABAJO_2 = 'https://satisfaccion-model.herokuapp.com/prediccion-model-risk';
+
 export const HEADERS = {
   headers: {
     'Content-Type': 'multipart/form-data',

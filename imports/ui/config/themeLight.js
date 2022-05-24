@@ -1,4 +1,4 @@
-import { colors } from '@mui/material';
+// import { colors } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 const fonts = 'Work Sans';
@@ -9,7 +9,7 @@ const themeLight = createTheme({
   },
   palette: {
     // background: {
-    //   default: colors.grey[500],
+    //   default: '#282828',
     // },
     // primary: {
     //   main: colors.blue[700],

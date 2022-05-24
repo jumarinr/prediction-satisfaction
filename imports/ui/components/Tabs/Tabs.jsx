@@ -26,7 +26,7 @@ const Tabs = ({ value, handleChange, tabs }) => {
 };
 
 Tabs.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   handleChange: PropTypes.func.isRequired,
   tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
