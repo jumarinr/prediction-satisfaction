@@ -37,7 +37,9 @@ const Formulario = () => {
             </Grid>
 
             <Grid item xs={12} className="mt-2">
-              <strong className="text-primary">Por favor ingrese el tipo de forma (basica o avanzada) de medir el nivel de satisfacción </strong>
+              <strong className="text-primary">
+                Por favor ingrese el tipo de forma (basica o avanzada) de medir el nivel crediticio
+              </strong>
             </Grid>
 
             <Grid item xs={12}>
