@@ -26,7 +26,7 @@ const NumberInput = ({
     <>
       <div className="d-flex justify-content-start">
         <InputLabel className="align-self-center">{label}</InputLabel>
-        <div style={{ maxWidth: 100 }}>
+        <div style={{ maxWidth: 150 }}>
           <TextField
             id="outlined-number"
             type="number"

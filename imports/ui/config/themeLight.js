@@ -8,9 +8,9 @@ const themeLight = createTheme({
     fontFamily: fonts,
   },
   palette: {
-    // background: {
-    //   default: '#282828',
-    // },
+    background: {
+      default: '#D9DAD8',
+    },
     // primary: {
     //   main: colors.blue[700],
     // },

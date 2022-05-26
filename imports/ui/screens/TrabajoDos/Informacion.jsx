@@ -12,7 +12,7 @@ const Informacion = () => (
       <CardContent>
         <p>
           Aplicación web que le permite conocer, de acuerdo con sus características,
-          cuál es su scorecard y cómo se ve reflejado contra la población.
+          cuál es su scorecard
         </p>
       </CardContent>
     </Card>

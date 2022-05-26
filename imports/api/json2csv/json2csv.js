@@ -13,7 +13,7 @@ const json2csv = async (fileContent) => {
   try {
     const promesaParseo = parseCSV(fileContent, {
       header: true,
-      quoted_string: true,
+      quoted_string: false,
     });
 
     return await promesaParseo;
