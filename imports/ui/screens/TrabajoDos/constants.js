@@ -113,3 +113,11 @@ export const ADVANCED_TAB = {
 };
 
 export const TABS = [BASIC_TAB, ADVANCED_TAB];
+
+export const SEGMENTS_LABEL = [
+  { text: 'Muy Malo', position: 'OUTSIDE' },
+  { text: 'Malo', position: 'OUTSIDE' },
+  { text: 'Regular', position: 'OUTSIDE' },
+  { text: 'Bueno', position: 'OUTSIDE' },
+  { text: 'Muy Bueno', position: 'OUTSIDE' },
+];
