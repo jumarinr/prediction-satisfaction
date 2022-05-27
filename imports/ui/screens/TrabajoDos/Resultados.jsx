@@ -100,7 +100,7 @@ const Resultados = () => {
 
             <Grid item xs={12} className="text-center">
               <FormLabel id="demo-radio-buttons-group-label">
-                El rango para su puntaje va de 300 a 850 segun puntaje FICO® Score
+                El rango para su puntaje va de 300 a 850 según puntaje FICO® Score
               </FormLabel>
             </Grid>
 
